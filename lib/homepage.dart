@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+
+import './fechData/fech_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<dynamic> characters = [];
-  final bool _loading = false;
+  late bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,5 +53,38 @@ class _HomePageState extends State<HomePage> {
                     );
                   }),
     );
+  }
+
+  void fechCharacters() async {
+    setState(() {
+      _loading = true;
+    });
+    HttpLink link = HttpLink('https://rickandmortyapi.com/graphql');
+    GraphQLClient qlClient = GraphQLClient(
+      link: link,
+      cache: GraphQLCache(
+        store: HiveStore(),
+      ),
+    );
+
+    QueryResult queryResult = await qlClient.query(
+      QueryOptions(
+        document: gql(
+          """query{
+        characters(){
+          result{
+            name
+            image
+          }
+        }
+      }""",
+        ),
+      ),
+    );
+
+    setState(() {
+      characters = queryResult.data!['characters']['result'];
+      _loading = false;
+    });
   }
 }
