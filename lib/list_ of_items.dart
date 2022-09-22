@@ -26,13 +26,12 @@ class _ListOffItemsState extends State<ListOffItems> {
           : characters.isEmpty
               ? Column(
                   children: [
-                    // Container(
-                    //   width: 150,
-                    //   height: 150,
-                    //   child: Image(
-                    //     image: NetworkImage(characters[0]),
-                    //   ),
-                    //),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Container(
+                        child: Image.asset('assets/pics/rick.png'),
+                      ),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
