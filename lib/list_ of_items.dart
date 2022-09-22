@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import './model/character.dart';
-
 import './item_details.dart';
 
 class ListOffItems extends StatefulWidget {
@@ -84,8 +82,13 @@ class _ListOffItemsState extends State<ListOffItems> {
                             onTap: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ItemDetails(
-                                          characters[index]['name'])),
+                                    builder: (context) => ItemDetails(
+                                      characters[index]['name'],
+                                      characters[index]['image'],
+                                      characters[index]['gender'],
+                                      characters[index]['species'],
+                                    ),
+                                  ),
                                 ));
                       }),
                 ),
@@ -114,6 +117,12 @@ class _ListOffItemsState extends State<ListOffItems> {
             image
             gender
             species
+            origin{
+             name
+            }
+           location{
+             name
+           }
             
 
           }
@@ -129,11 +138,3 @@ class _ListOffItemsState extends State<ListOffItems> {
     });
   }
 }
-
-
-///origin{
-             //name
-            //}
-          //  location{
-           //   name
-           // }
