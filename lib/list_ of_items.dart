@@ -44,7 +44,14 @@ class _ListOffItemsState extends State<ListOffItems> {
                         onPressed: () {
                           fechCharacters();
                         },
-                        child: const Text('Show Characters'),
+                        child: const Text(
+                          'Show Characters',
+                          style: const TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -87,6 +94,8 @@ class _ListOffItemsState extends State<ListOffItems> {
                                       characters[index]['image'],
                                       characters[index]['gender'],
                                       characters[index]['species'],
+                                      characters[index]['origin']['name'],
+                                      characters[index]['location']['name'],
                                     ),
                                   ),
                                 ));

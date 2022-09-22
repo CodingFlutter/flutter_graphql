@@ -5,12 +5,16 @@ class ItemDetails extends StatelessWidget {
   String image;
   String gender;
   String species;
+  String origin;
+  String location;
 
   ItemDetails(
     this.name,
     this.image,
     this.gender,
     this.species,
+    this.origin,
+    this.location,
   );
 
   @override
@@ -49,20 +53,46 @@ class ItemDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Text(
-              gender,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
-            ),
-            Text(
-              species,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.only(left: 32),
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'gender:  $gender',
+                      style: const TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'species:  $species',
+                      style: const TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'origin:  $origin',
+                      style: const TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'location:  $location',
+                      style: const TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
