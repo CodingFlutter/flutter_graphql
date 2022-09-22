@@ -52,7 +52,7 @@ class ItemDetails extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.only(left: 32),
               child: Container(
@@ -62,7 +62,7 @@ class ItemDetails extends StatelessWidget {
                     Text(
                       'gender:  $gender',
                       style: const TextStyle(
-                        fontSize: 19,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
@@ -70,7 +70,7 @@ class ItemDetails extends StatelessWidget {
                     Text(
                       'species:  $species',
                       style: const TextStyle(
-                        fontSize: 19,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
@@ -78,7 +78,7 @@ class ItemDetails extends StatelessWidget {
                     Text(
                       'origin:  $origin',
                       style: const TextStyle(
-                        fontSize: 19,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
@@ -86,7 +86,7 @@ class ItemDetails extends StatelessWidget {
                     Text(
                       'location:  $location',
                       style: const TextStyle(
-                        fontSize: 19,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
