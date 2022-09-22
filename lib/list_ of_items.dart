@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+import './model/character.dart';
+
+import './item_details.dart';
+
+class ListOffItems extends StatefulWidget {
+  const ListOffItems({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ListOffItems> createState() => _ListOffItemsState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ListOffItemsState extends State<ListOffItems> {
   List<dynamic> characters = [];
   late bool _loading = false;
 
@@ -36,13 +40,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Center(
                       child: ElevatedButton(
-                        child: const Text('Show Characters'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.lightGreen,
                         ),
                         onPressed: () {
                           fechCharacters();
                         },
+                        child: const Text('Show Characters'),
                       ),
                     ),
                   ],
@@ -58,22 +62,31 @@ class _HomePageState extends State<HomePage> {
                       ),
                       itemCount: characters.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          child: Column(
-                            children: [
-                              Expanded(
-                                child: Image(
-                                  image:
-                                      NetworkImage(characters[index]['image']),
-                                ),
+                        var character = characters[index];
+                        print(character['name']);
+                        return InkWell(
+                            child: Card(
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Image(
+                                      image: NetworkImage(
+                                          characters[index]['image']),
+                                    ),
+                                  ),
+                                  Text(
+                                    characters[index]['name'],
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
                               ),
-                              Text(
-                                characters[index]['name'],
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        );
+                            ),
+                            onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ItemDetails(
+                                          characters[index]['name'])),
+                                ));
                       }),
                 ),
     );
@@ -97,8 +110,12 @@ class _HomePageState extends State<HomePage> {
           """query{
         characters{
           results{
-            name
+             name
             image
+            gender
+            species
+            
+
           }
         }
       }""",
@@ -112,3 +129,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
 }
+
+
+///origin{
+             //name
+            //}
+          //  location{
+           //   name
+           // }
