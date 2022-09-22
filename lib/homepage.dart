@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Center(
                       child: ElevatedButton(
-                        child: const Text('Fetch Characters'),
+                        child: const Text('Show Characters'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.lightGreen,
                         ),
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 )
               : Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
