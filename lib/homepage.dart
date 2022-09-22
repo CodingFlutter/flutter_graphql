@@ -43,25 +43,32 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 )
-              : GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                  ),
-                  itemCount: characters.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: Image(
-                              image: NetworkImage(characters[index]['image']),
-                            ),
-                          ),
-                          Text(characters[index]['name']),
-                        ],
+              : Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 2,
+                        mainAxisSpacing: 2,
                       ),
-                    );
-                  }),
+                      itemCount: characters.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: Image(
+                                  image:
+                                      NetworkImage(characters[index]['image']),
+                                ),
+                              ),
+                              Text(characters[index]['name']),
+                            ],
+                          ),
+                        );
+                      }),
+                ),
     );
   }
 
