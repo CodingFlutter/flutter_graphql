@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import './fechData/fech_data.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -25,15 +23,23 @@ class _HomePageState extends State<HomePage> {
           : characters.isEmpty
               ? Column(
                   children: [
-                    Container(),
+                    // Container(
+                    //   width: 150,
+                    //   height: 150,
+                    //   child: Image(
+                    //     image: NetworkImage(characters[0]),
+                    //   ),
+                    //),
                     const SizedBox(
                       height: 20,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        fechCharacters();
-                      },
-                      child: const Text('Fetch Characters'),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          fechCharacters();
+                        },
+                        child: const Text('Fetch Characters'),
+                      ),
                     ),
                   ],
                 )
@@ -46,8 +52,10 @@ class _HomePageState extends State<HomePage> {
                     return Card(
                       child: Column(
                         children: [
-                          Image(
-                            image: NetworkImage(characters[index]['image']),
+                          Expanded(
+                            child: Image(
+                              image: NetworkImage(characters[index]['image']),
+                            ),
                           ),
                           Text(characters[index]['name']),
                         ],
