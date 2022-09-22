@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('The Rick and Morty API'),
+        backgroundColor: Colors.lightGreen,
       ),
       body: _loading
           ? const CircularProgressIndicator()
@@ -35,10 +36,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Center(
                       child: ElevatedButton(
+                        child: const Text('Fetch Characters'),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.lightGreen,
+                        ),
                         onPressed: () {
                           fechCharacters();
                         },
-                        child: const Text('Fetch Characters'),
                       ),
                     ),
                   ],
@@ -63,7 +67,10 @@ class _HomePageState extends State<HomePage> {
                                       NetworkImage(characters[index]['image']),
                                 ),
                               ),
-                              Text(characters[index]['name']),
+                              Text(
+                                characters[index]['name'],
+                                textAlign: TextAlign.center,
+                              ),
                             ],
                           ),
                         );
