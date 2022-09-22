@@ -1,3 +1,7 @@
-** GraphQL and Flutter an example **
+**GraphQL and Flutter an example**
 
-![](https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/pic1.png)
+
+
+<p align="left">
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/pic1.png" width="300" height="600"/> 
+</p>
