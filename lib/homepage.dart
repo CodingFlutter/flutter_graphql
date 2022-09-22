@@ -29,9 +29,11 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const ElevatedButton(
-                      onPressed: null,
-                      child: Text('Fetch Characters'),
+                    ElevatedButton(
+                      onPressed: () {
+                        fechCharacters();
+                      },
+                      child: const Text('Fetch Characters'),
                     ),
                   ],
                 )
@@ -71,8 +73,8 @@ class _HomePageState extends State<HomePage> {
       QueryOptions(
         document: gql(
           """query{
-        characters(){
-          result{
+        characters{
+          results{
             name
             image
           }
@@ -83,7 +85,7 @@ class _HomePageState extends State<HomePage> {
     );
 
     setState(() {
-      characters = queryResult.data!['characters']['result'];
+      characters = queryResult.data!['characters']['results'];
       _loading = false;
     });
   }
