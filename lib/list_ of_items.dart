@@ -67,7 +67,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                       itemCount: characters.length,
                       itemBuilder: (context, index) {
                         var character = characters[index];
-                        print(character['name']);
+                        print(characters[index]['episode']);
                         return InkWell(
                             child: Card(
                               child: Column(
@@ -96,8 +96,6 @@ class _ListOffItemsState extends State<ListOffItems> {
                                       characters[index]['origin']['name'],
                                       characters[index]['location']['name'],
                                       characters[index]['location']['type'],
-                                      // characters[index]['location']['residents']
-                                      //  ['name'],
                                     ),
                                   ),
                                 ));
@@ -134,10 +132,11 @@ class _ListOffItemsState extends State<ListOffItems> {
            location{
              name
              type
-             residents{
-                name
-              }
            }
+           episode{
+            
+              name
+            }
             
 
           }
