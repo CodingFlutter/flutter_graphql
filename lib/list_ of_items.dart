@@ -95,6 +95,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                                       characters[index]['species'],
                                       characters[index]['origin']['name'],
                                       characters[index]['location']['name'],
+                                      characters[index]['location']['type'],
                                     ),
                                   ),
                                 ));
@@ -130,6 +131,7 @@ class _ListOffItemsState extends State<ListOffItems> {
             }
            location{
              name
+             type
            }
             
 

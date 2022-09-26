@@ -6,7 +6,8 @@ class ItemDetails extends StatelessWidget {
   String gender;
   String species;
   String origin;
-  String location;
+  String locName;
+  String locType;
 
   ItemDetails(
     this.name,
@@ -14,7 +15,8 @@ class ItemDetails extends StatelessWidget {
     this.gender,
     this.species,
     this.origin,
-    this.location,
+    this.locName,
+    this.locType,
   );
 
   @override
@@ -83,12 +85,34 @@ class ItemDetails extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    Text(
-                      'location:  $location',
-                      style: const TextStyle(
+                    const Text(
+                      'location:',
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text(
+                        'name:  $locName',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text(
+                        'type:  $locType',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],
