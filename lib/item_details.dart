@@ -8,6 +8,7 @@ class ItemDetails extends StatelessWidget {
   String origin;
   String locName;
   String locType;
+  //List<dynamic> resident;
 
   ItemDetails(
     this.name,
@@ -17,6 +18,7 @@ class ItemDetails extends StatelessWidget {
     this.origin,
     this.locName,
     this.locType,
+    // this.resident,
   );
 
   @override
