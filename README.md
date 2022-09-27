@@ -1,5 +1,5 @@
 **In progress**
-# GraphQL and Flutter an example
+# GraphQL and Flutter example
 
 # Android Platform
 
