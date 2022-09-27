@@ -67,8 +67,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                       itemCount: characters.length,
                       itemBuilder: (context, index) {
                         var character = characters[index];
-                        //print(character);
-                        // print(characters.toString());
+
                         return InkWell(
                             child: Card(
                               color: Colors.lightGreen,
