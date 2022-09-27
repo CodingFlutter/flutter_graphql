@@ -47,64 +47,81 @@ class ItemDetails extends StatelessWidget {
             Center(
               child: Container(
                 color: Colors.white,
-                height: 300,
-                width: 300,
+                height: 250,
+                width: 250,
                 child: Card(
                   child: Expanded(
                     child: Image(
-                      height: 250,
-                      width: 250,
+                      height: 200,
+                      width: 200,
                       image: NetworkImage(image),
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.only(left: 32),
+              padding: const EdgeInsets.only(
+                left: 32,
+              ),
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Status:  $status',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Status:  $status',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Text(
-                      'Species:  $species',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Species:  $species',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Text(
-                      'Type:  $type',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Type:  $type',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Text(
-                      'Gender:  $gender',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Gender:  $gender',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Text(
-                      'Origin:  $origin',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Origin:  $origin',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     const Text(
@@ -137,12 +154,15 @@ class ItemDetails extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
-                      'Episodes:',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Text(
+                        'Episodes:',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -159,7 +179,7 @@ class ItemDetails extends StatelessWidget {
                               child: Text(
                                 episods[index]['name'],
                                 style: const TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.lightGreen,
                                 ),
