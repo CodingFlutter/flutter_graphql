@@ -3,20 +3,26 @@ import 'package:flutter/material.dart';
 class ItemDetails extends StatelessWidget {
   String name;
   String image;
-  String gender;
+  String status;
   String species;
+  String type;
+  String gender;
   String origin;
   String locName;
   String locType;
+  List<dynamic> episods = [];
 
   ItemDetails(
     this.name,
     this.image,
-    this.gender,
+    this.status,
     this.species,
+    this.type,
+    this.gender,
     this.origin,
     this.locName,
     this.locType,
+    this.episods,
   );
 
   @override
@@ -62,7 +68,7 @@ class ItemDetails extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'gender:  $gender',
+                      'Status:  $status',
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -70,7 +76,7 @@ class ItemDetails extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'species:  $species',
+                      'Species:  $species',
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -78,7 +84,23 @@ class ItemDetails extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'origin:  $origin',
+                      'Type:  $type',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Gender:  $gender',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Origin:  $origin',
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -86,7 +108,7 @@ class ItemDetails extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      'location:',
+                      'Location:',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -96,7 +118,7 @@ class ItemDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: Text(
-                        'name:  $locName',
+                        'Name:  $locName',
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -107,12 +129,44 @@ class ItemDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: Text(
-                        'type:  $locType',
+                        'Type:  $locType',
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
+                      ),
+                    ),
+                    const Text(
+                      'Episodes:',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 120,
+                      child: ListView.builder(
+                        itemCount: episods.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                episods[index]['name'],
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.lightGreen,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ],

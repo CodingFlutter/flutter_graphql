@@ -45,7 +45,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                         },
                         child: const Text(
                           'Show Characters',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 19,
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
@@ -67,7 +67,8 @@ class _ListOffItemsState extends State<ListOffItems> {
                       itemCount: characters.length,
                       itemBuilder: (context, index) {
                         var character = characters[index];
-                        print(characters[index]['episode']);
+                        //print(character);
+                        // print(characters.toString());
                         return InkWell(
                             child: Card(
                               child: Column(
@@ -91,11 +92,14 @@ class _ListOffItemsState extends State<ListOffItems> {
                                     builder: (context) => ItemDetails(
                                       characters[index]['name'],
                                       characters[index]['image'],
-                                      characters[index]['gender'],
+                                      characters[index]['status'],
                                       characters[index]['species'],
+                                      characters[index]['type'],
+                                      characters[index]['gender'],
                                       characters[index]['origin']['name'],
                                       characters[index]['location']['name'],
                                       characters[index]['location']['type'],
+                                      characters[index]['episode'],
                                     ),
                                   ),
                                 ));
@@ -124,8 +128,10 @@ class _ListOffItemsState extends State<ListOffItems> {
           results{
              name
             image
-            gender
+            status
             species
+            type
+            gender
             origin{
              name
             }
@@ -133,12 +139,11 @@ class _ListOffItemsState extends State<ListOffItems> {
              name
              type
            }
+           
            episode{
-            
+              id
               name
             }
-            
-
           }
         }
       }""",
