@@ -63,7 +63,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                         crossAxisCount: 3,
                         crossAxisSpacing: 2,
                         mainAxisSpacing: 2,
-                        childAspectRatio: 0.9,
+                        childAspectRatio: 0.75,
                       ),
                       itemCount: characters.length,
                       itemBuilder: (context, index) {
@@ -84,7 +84,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                                     characters[index]['name'],
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
-                                      fontSize: 13,
+                                      fontSize: 15,
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
                                     ),
