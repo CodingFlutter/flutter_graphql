@@ -71,6 +71,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                         // print(characters.toString());
                         return InkWell(
                             child: Card(
+                              color: Colors.lightGreen,
                               child: Column(
                                 children: [
                                   Expanded(
@@ -82,6 +83,11 @@ class _ListOffItemsState extends State<ListOffItems> {
                                   Text(
                                     characters[index]['name'],
                                     textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ],
                               ),
