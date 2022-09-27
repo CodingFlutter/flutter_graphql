@@ -63,6 +63,7 @@ class _ListOffItemsState extends State<ListOffItems> {
                         crossAxisCount: 3,
                         crossAxisSpacing: 2,
                         mainAxisSpacing: 2,
+                        childAspectRatio: 0.9,
                       ),
                       itemCount: characters.length,
                       itemBuilder: (context, index) {
