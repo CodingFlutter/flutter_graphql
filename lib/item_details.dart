@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import './widgets/my_text.dart';
 
 class ItemDetails extends StatelessWidget {
   String name;
@@ -65,114 +66,67 @@ class ItemDetails extends StatelessWidget {
                 left: 32,
               ),
               child: Platform.isIOS
-                  ? Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Status:  $status',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Species:  $species',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Gender:  $gender',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Origin:  $origin',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            'Location:  $locName',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              'Episodes:',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 160,
-                            child: ListView.builder(
-                              itemCount: episods.length,
-                              itemBuilder: (context, index) {
-                                return Card(
-                                  child: ListTile(
-                                    leading: Text(
-                                      episods[index]['episode'],
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.lightGreen,
-                                      ),
-                                    ),
-                                    title: Text(
-                                      episods[index]['name'],
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.lightGreen,
-                                      ),
-                                    ),
-                                    subtitle: Text(
-                                      episods[index]['air_date'],
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.lightGreen,
-                                      ),
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MyText(
+                          myTitle: 'Status:  $status',
+                        ),
+                        MyText(
+                          myTitle: 'Species:  $species',
+                        ),
+                        MyText(
+                          myTitle: 'Gender:  $gender',
+                        ),
+                        MyText(
+                          myTitle: 'Origin:  $origin',
+                        ),
+                        MyText(
+                          myTitle: 'Location:  $locName',
+                        ),
+                        const MyText(
+                          myTitle: 'Episodes:',
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        SizedBox(
+                          height: 160,
+                          child: ListView.builder(
+                            itemCount: episods.length,
+                            itemBuilder: (context, index) {
+                              return Card(
+                                child: ListTile(
+                                  leading: Text(
+                                    episods[index]['episode'],
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.lightGreen,
                                     ),
                                   ),
-                                );
-                              },
-                            ),
-                          )
-                        ],
-                      ),
+                                  title: Text(
+                                    episods[index]['name'],
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.lightGreen,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    episods[index]['air_date'],
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.lightGreen,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        )
+                      ],
                     )
                   : Container(
                       child: Column(
