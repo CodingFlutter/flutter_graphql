@@ -4,9 +4,13 @@ class MyText extends StatelessWidget {
   const MyText({
     Key? key,
     required this.myTitle,
+    required this.textSize,
+    required this.textColor,
   }) : super(key: key);
 
   final String myTitle;
+  final double textSize;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +18,10 @@ class MyText extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8),
       child: Text(
         myTitle,
-        style: const TextStyle(
-          fontSize: 16,
+        style: TextStyle(
+          fontSize: textSize,
           fontWeight: FontWeight.w500,
-          color: Colors.white,
+          color: textColor,
         ),
       ),
     );

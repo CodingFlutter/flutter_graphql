@@ -71,21 +71,33 @@ class ItemDetails extends StatelessWidget {
                       children: [
                         MyText(
                           myTitle: 'Status:  $status',
+                          textSize: 16,
+                          textColor: Colors.white,
                         ),
                         MyText(
                           myTitle: 'Species:  $species',
+                          textSize: 16,
+                          textColor: Colors.white,
                         ),
                         MyText(
                           myTitle: 'Gender:  $gender',
+                          textSize: 16,
+                          textColor: Colors.white,
                         ),
                         MyText(
                           myTitle: 'Origin:  $origin',
+                          textSize: 16,
+                          textColor: Colors.white,
                         ),
                         MyText(
                           myTitle: 'Location:  $locName',
+                          textSize: 16,
+                          textColor: Colors.white,
                         ),
                         const MyText(
                           myTitle: 'Episodes:',
+                          textSize: 16,
+                          textColor: Colors.white,
                         ),
                         const SizedBox(
                           height: 5,
@@ -97,29 +109,20 @@ class ItemDetails extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return Card(
                                 child: ListTile(
-                                  leading: Text(
-                                    episods[index]['episode'],
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.lightGreen,
-                                    ),
+                                  leading: MyText(
+                                    myTitle: episods[index]['episode'],
+                                    textSize: 12,
+                                    textColor: Colors.lightGreen,
                                   ),
-                                  title: Text(
-                                    episods[index]['name'],
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.lightGreen,
-                                    ),
+                                  title: MyText(
+                                    myTitle: episods[index]['name'],
+                                    textSize: 16,
+                                    textColor: Colors.lightGreen,
                                   ),
-                                  subtitle: Text(
-                                    episods[index]['air_date'],
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.lightGreen,
-                                    ),
+                                  subtitle: MyText(
+                                    myTitle: episods[index]['air_date'],
+                                    textSize: 12,
+                                    textColor: Colors.lightGreen,
                                   ),
                                 ),
                               );
@@ -132,68 +135,35 @@ class ItemDetails extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Status:  $status',
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
+                          MyText(
+                            myTitle: 'Status:  $status',
+                            textSize: 18,
+                            textColor: Colors.white,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Species:  $species',
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
+                          MyText(
+                            myTitle: 'Species:  $species',
+                            textSize: 18,
+                            textColor: Colors.white,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Gender:  $gender',
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
+                          MyText(
+                            myTitle: 'Gender:  $gender',
+                            textSize: 18,
+                            textColor: Colors.white,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'Origin:  $origin',
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
+                          MyText(
+                            myTitle: 'Origin:  $origin',
+                            textSize: 18,
+                            textColor: Colors.white,
                           ),
-                          Text(
-                            'Location:  $locName',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
+                          MyText(
+                            myTitle: 'Location:  $locName',
+                            textSize: 18,
+                            textColor: Colors.white,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              'Episodes:',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
+                          const MyText(
+                            myTitle: 'Episodes:',
+                            textSize: 18,
+                            textColor: Colors.white,
                           ),
                           const SizedBox(
                             height: 10,
@@ -205,29 +175,20 @@ class ItemDetails extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return Card(
                                   child: ListTile(
-                                    leading: Text(
-                                      episods[index]['episode'],
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.lightGreen,
-                                      ),
+                                    leading: MyText(
+                                      myTitle: episods[index]['episode'],
+                                      textSize: 12,
+                                      textColor: Colors.lightGreen,
                                     ),
-                                    title: Text(
-                                      episods[index]['name'],
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.lightGreen,
-                                      ),
+                                    title: MyText(
+                                      myTitle: episods[index]['name'],
+                                      textSize: 16,
+                                      textColor: Colors.lightGreen,
                                     ),
-                                    subtitle: Text(
-                                      episods[index]['air_date'],
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.lightGreen,
-                                      ),
+                                    subtitle: MyText(
+                                      myTitle: episods[index]['air_date'],
+                                      textSize: 12,
+                                      textColor: Colors.lightGreen,
                                     ),
                                   ),
                                 );
