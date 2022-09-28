@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import './item_details.dart';
@@ -22,7 +24,10 @@ class _ListOffItemsState extends State<ListOffItems> {
         backgroundColor: Colors.lightGreen,
       ),
       body: _loading
-          ? const CircularProgressIndicator()
+          ? const Center(
+              child: CircularProgressIndicator(
+              color: Colors.lightGreen,
+            ))
           : characters.isEmpty
               ? Column(
                   children: [
@@ -36,78 +41,144 @@ class _ListOffItemsState extends State<ListOffItems> {
                       height: 20,
                     ),
                     Center(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.lightGreen,
-                        ),
-                        onPressed: () {
-                          fechCharacters();
-                        },
-                        child: const Text(
-                          'Show Characters',
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                      child: Platform.isIOS
+                          ? CupertinoButton(
+                              color: Colors.lightGreen,
+                              child: const Text(
+                                'Show Characters',
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              onPressed: () {
+                                fechCharacters();
+                              })
+                          : ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.lightGreen,
+                              ),
+                              onPressed: () {
+                                fechCharacters();
+                              },
+                              child: const Text(
+                                'Show Characters',
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                     ),
                   ],
                 )
               : Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 2,
-                        mainAxisSpacing: 2,
-                        childAspectRatio: 0.75,
-                      ),
-                      itemCount: characters.length,
-                      itemBuilder: (context, index) {
-                        var character = characters[index];
+                  child: Platform.isIOS
+                      ? GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 1,
+                            mainAxisSpacing: 1,
+                            childAspectRatio: 0.84,
+                          ),
+                          itemCount: characters.length,
+                          itemBuilder: (context, index) {
+                            var character = characters[index];
 
-                        return InkWell(
-                            child: Card(
-                              color: Colors.lightGreen,
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    child: Image(
-                                      image: NetworkImage(
-                                          characters[index]['image']),
-                                    ),
+                            return InkWell(
+                                child: Card(
+                                  color: Colors.lightGreen,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Image(
+                                          image: NetworkImage(
+                                              characters[index]['image']),
+                                        ),
+                                      ),
+                                      Text(
+                                        characters[index]['name'],
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    characters[index]['name'],
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.white,
-                                    ),
+                                ),
+                                onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ItemDetails(
+                                          character['name'],
+                                          character['image'],
+                                          character['status'],
+                                          character['species'],
+                                          character['gender'],
+                                          character['origin']['name'],
+                                          character['location']['name'],
+                                          character['episode'],
+                                        ),
+                                      ),
+                                    ));
+                          })
+                      : GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 2,
+                            mainAxisSpacing: 2,
+                            childAspectRatio: 0.75,
+                          ),
+                          itemCount: characters.length,
+                          itemBuilder: (context, index) {
+                            var character = characters[index];
+
+                            return InkWell(
+                                child: Card(
+                                  color: Colors.lightGreen,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Image(
+                                          image: NetworkImage(
+                                              characters[index]['image']),
+                                        ),
+                                      ),
+                                      Text(
+                                        characters[index]['name'],
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            ),
-                            onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ItemDetails(
-                                      characters[index]['name'],
-                                      characters[index]['image'],
-                                      characters[index]['status'],
-                                      characters[index]['species'],
-                                      characters[index]['gender'],
-                                      characters[index]['origin']['name'],
-                                      characters[index]['location']['name'],
-                                      characters[index]['episode'],
-                                    ),
-                                  ),
-                                ));
-                      }),
+                                ),
+                                onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ItemDetails(
+                                          character['name'],
+                                          character['image'],
+                                          character['status'],
+                                          character['species'],
+                                          character['gender'],
+                                          character['origin']['name'],
+                                          character['location']['name'],
+                                          character['episode'],
+                                        ),
+                                      ),
+                                    ));
+                          }),
                 ),
     );
   }
