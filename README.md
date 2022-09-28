@@ -4,10 +4,10 @@
 # iOS
 
 <p align="left">
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic1.png" width="200" height="500"/> 
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic2.png" width="200" height="500"/>
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic3.png" width="200" height="500"/> 
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic4.png" width="200" height="500"/>
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic1.png" width="300" height="600"/> 
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic2.png" width="300" height="600"/>
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic3.png" width="300" height="600"/> 
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic4.png" width="300" height="600"/>
 </p>
 
 # Android Platform
