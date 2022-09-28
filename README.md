@@ -3,7 +3,7 @@
 
 # iOS
 
-<p align="right">
+<p align="left">
 <img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic1.png" width="260" height="560" hspace="0"/> 
 <img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic2.png" width="260" height="560" hspace="0"/>
 <img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic3.png" width="260" height="560" hspace="0"/> 
