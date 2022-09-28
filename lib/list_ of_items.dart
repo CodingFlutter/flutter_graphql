@@ -100,11 +100,9 @@ class _ListOffItemsState extends State<ListOffItems> {
                                       characters[index]['image'],
                                       characters[index]['status'],
                                       characters[index]['species'],
-                                      characters[index]['type'],
                                       characters[index]['gender'],
                                       characters[index]['origin']['name'],
                                       characters[index]['location']['name'],
-                                      characters[index]['location']['type'],
                                       characters[index]['episode'],
                                     ),
                                   ),
@@ -136,19 +134,18 @@ class _ListOffItemsState extends State<ListOffItems> {
             image
             status
             species
-            type
             gender
             origin{
-             name
+              name
             }
-           location{
+            location{
              name
-             type
            }
-           
            episode{
               id
               name
+              air_date
+              episode
             }
           }
         }

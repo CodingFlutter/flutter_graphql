@@ -5,11 +5,9 @@ class ItemDetails extends StatelessWidget {
   String image;
   String status;
   String species;
-  String type;
   String gender;
   String origin;
   String locName;
-  String locType;
   List<dynamic> episods = [];
 
   ItemDetails(
@@ -17,11 +15,9 @@ class ItemDetails extends StatelessWidget {
     this.image,
     this.status,
     this.species,
-    this.type,
     this.gender,
     this.origin,
     this.locName,
-    this.locType,
     this.episods,
   );
 
@@ -47,20 +43,22 @@ class ItemDetails extends StatelessWidget {
             Center(
               child: Container(
                 color: Colors.white,
-                height: 250,
-                width: 250,
+                height: 230,
+                width: 230,
                 child: Card(
                   child: Expanded(
                     child: Image(
-                      height: 200,
-                      width: 200,
+                      height: 170,
+                      width: 170,
                       image: NetworkImage(image),
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.only(
                 left: 32,
@@ -94,17 +92,6 @@ class ItemDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
-                        'Type:  $type',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Text(
                         'Gender:  $gender',
                         style: const TextStyle(
                           fontSize: 18,
@@ -124,34 +111,12 @@ class ItemDetails extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
-                      'Location:',
-                      style: TextStyle(
+                    Text(
+                      'Location:  $locName',
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        'Name:  $locName',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        'Type:  $locType',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
                       ),
                     ),
                     const Padding(
@@ -169,17 +134,32 @@ class ItemDetails extends StatelessWidget {
                       height: 10,
                     ),
                     Container(
-                      height: 120,
+                      height: 225,
                       child: ListView.builder(
                         itemCount: episods.length,
                         itemBuilder: (context, index) {
                           return Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
+                            child: ListTile(
+                              leading: Text(
+                                episods[index]['episode'],
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.lightGreen,
+                                ),
+                              ),
+                              title: Text(
                                 episods[index]['name'],
                                 style: const TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.lightGreen,
+                                ),
+                              ),
+                              subtitle: Text(
+                                episods[index]['air_date'],
+                                style: const TextStyle(
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.lightGreen,
                                 ),
