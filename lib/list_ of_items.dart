@@ -88,7 +88,6 @@ class _ListOffItemsState extends State<ListOffItems> {
                           itemCount: characters.length,
                           itemBuilder: (context, index) {
                             var character = characters[index];
-
                             return InkWell(
                                 child: Card(
                                   color: Colors.lightGreen,
@@ -97,7 +96,8 @@ class _ListOffItemsState extends State<ListOffItems> {
                                       Expanded(
                                         child: Image(
                                           image: NetworkImage(
-                                              characters[index]['image']),
+                                            characters[index]['image'],
+                                          ),
                                         ),
                                       ),
                                       Text(
@@ -139,46 +139,48 @@ class _ListOffItemsState extends State<ListOffItems> {
                           itemCount: characters.length,
                           itemBuilder: (context, index) {
                             var character = characters[index];
-
                             return InkWell(
-                                child: Card(
-                                  color: Colors.lightGreen,
-                                  child: Column(
-                                    children: [
-                                      Expanded(
-                                        child: Image(
-                                          image: NetworkImage(
-                                              characters[index]['image']),
+                              child: Card(
+                                color: Colors.lightGreen,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Image(
+                                        image: NetworkImage(
+                                          characters[index]['image'],
                                         ),
                                       ),
-                                      Text(
-                                        characters[index]['name'],
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                        ),
+                                    ),
+                                    Text(
+                                      characters[index]['name'],
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white,
                                       ),
-                                    ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ItemDetails(
+                                    character['name'],
+                                    character['image'],
+                                    character['status'],
+                                    character['species'],
+                                    character['gender'],
+                                    character['origin']['name'],
+                                    character['location']['name'],
+                                    character['episode'],
                                   ),
                                 ),
-                                onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => ItemDetails(
-                                          character['name'],
-                                          character['image'],
-                                          character['status'],
-                                          character['species'],
-                                          character['gender'],
-                                          character['origin']['name'],
-                                          character['location']['name'],
-                                          character['episode'],
-                                        ),
-                                      ),
-                                    ));
-                          }),
+                              ),
+                            );
+                          },
+                        ),
                 ),
     );
   }
