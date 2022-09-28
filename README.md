@@ -5,9 +5,9 @@
 
 <p align="left">
 <img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic1.png" width="300" height="580" hspace="20"/> 
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic2.png" width="300" height="580"/>
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic3.png" width="300" height="580"/> 
-<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic4.png" width="300" height="580"/>
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic2.png" width="300" height="580" hspace="20"/>
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic3.png" width="300" height="580" hspace="20"/> 
+<img src="https://github.com/CodingFlutter/flutter_graphql/blob/main/assets/pics/ios_pic4.png" width="300" height="580" hspace="20"/>
 </p>
 
 # Android Platform
